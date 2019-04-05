@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    background: slateblue;
+    min-height: 2000px;
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #00CCCC;
+    height: 45px;
+    z-index: 10;
+}
+
+.sideMenuBar {
+    position: fixed;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#leftSideMenuBar {
+    left: 0;
+    background: darkseagreen;
+}
+#rightSideMenuBar {
+    right: 0;
+    background: darkgoldenrod;
+}
+
+.sideMenuBarButton {
+    display: block;
+    padding: 5px 10px;
+}
+.sideMenuBarButton:hover {
+    background: pink;
+    cursor: pointer;
+}
+
+main {
+    margin-top: 45px;
+    margin-left: 60px;
+    margin-right: 60px;
+    background: greenyellow;
+    height: 300px;
+}
+
+.sideMenu {
+    position: fixed;
+    background: grey;
+    width: 200px;
+    height: 100%;
+    top: 45px;
+    transition: transform 0.5s ease-in;
+}
+
+.leftSideMenu {
+    transform: translate(-200px, 0);
+}
+
+.rightSideMenu {
+    right: 0;
+    transform: translate(200px, 0);
+}
+
+.sideMenu.shown {
+    transform: translate(0, 0);
+    z-index: 30;
+}
+
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 20;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.overlay.active {
+    display: block;
+}
+
+.material-icons {
+    pointer-events: none;
+}

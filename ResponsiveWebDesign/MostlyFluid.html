@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ColumnDropPattern</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        .con {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box {
+            height: 100px;
+            width: 100%;
+        }
+
+        @media screen and (min-width: 450px) {
+            .two, .three {width:50%;}
+        }
+        @media screen and (min-width: 750px) {
+            .one, .two {width:50%;}
+            .three, .four, .five {width:33.3333%;}
+        }
+        @media screen and (min-width: 1000px) {
+            .con {
+                width: 86%;
+                margin-left:  auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="con">
+    <div class="box one bg-primary"></div>
+    <div class="box two bg-secondary"></div>
+    <div class="box three bg-success"></div>
+    <div class="box four bg-danger"></div>
+    <div class="box five bg-warning"></div>
+</div>
+</body>
+</html>
