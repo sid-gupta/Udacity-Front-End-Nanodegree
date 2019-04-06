@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OffCanvas Pattern</title>
+    <style>
+        body {
+            height: 100%;
+            margin: 10px
+        }
+
+        .container.shown {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .menu {
+            background: #8001ff;
+            position: absolute;
+            width: 300px;
+            transform: translate(-310px, 0);
+            transition: transform 0.3s ease;
+        }
+
+        .menu.shown {
+            transform: translate(0px, 0);
+        }
+
+        .content {
+            background: #00B288;
+        }
+
+        .box {
+            height: 100%;
+        }
+    </style>
+</head>
+<body id="body">
+
+<div id="menu" class="menu box">
+    hidden
+</div>
+<div class="container" id="container">
+    <div id="content" class="content box">
+        visible
+    </div>
+</div>
+<script>
+    let container = document.getElementById('container');
+    let menu = document.getElementById('menu');
+    let content = document.getElementById('content');
+    let body = document.getElementById('body');
+
+    function trigger() {
+        menu.classList.toggle('shown');
+        let added = container.classList.toggle('shown');
+        if (added) {
+            container.addEventListener('click', triggerTrigger)
+        }
+        else {
+            container.removeEventListener('click', triggerTrigger);
+        }
+    }
+
+    function triggerTrigger(ev) {
+        trigger();
+    }
+</script>
+</body>
+</html>

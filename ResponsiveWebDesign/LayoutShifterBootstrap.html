@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Layout Shifter Pattern using Bootstrap</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        .container-fluid {
+            padding: 0 5%;
+        }
+        .box {
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-3 order-2 box one bg-danger">a</div>
+            <div class="col-12 col-sm-6 col-md-6 order-2 order-md-1">
+                <div class="row">
+                    <div class="col-12 order-2 box two bg-primary">b</div>
+                    <div class="col-12 order-2 box three bg-success">c</div>
+                </div>
+            </div>
+            <div class="col-12 col-md-3 order-2 order-md-0 box four bg-secondary">d</div>
+            <div class="col-12 order-2 order-sm-0 order-md-2 box five bg-warning">e</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Layout Shifter Pattern</title>
+
+    <style>
+        body {
+            height: 100%;
+        }
+        .box {
+            min-height: 50px;
+            width: 100%;
+        }
+        .container, .container-2 {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+        }
+
+
+        .one {
+            background: palevioletred;
+        }
+        .two {
+            background: lightskyblue;
+        }
+        .three {
+            background: limegreen;
+        }
+        .four {
+            background: rebeccapurple;
+        }
+        .five {
+            background: orangered;
+        }
+
+        @media screen and (min-width: 450px) {
+            .one { width: 50%;}
+            .container-2 { width: 50%;}
+            .five {order: -1;}
+        }
+
+        @media screen and (min-width: 700px) {
+            .one {width: 25%; order: 1}
+            .container-2 {width: 50%;}
+            .four{ width: 25%; order:-1;}
+            .five{order: 2;}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box one">a</div>
+    <div class="container-2">
+        <div class="box two">b</div>
+        <div class="box three">c</div>
+    </div>
+    <div class="box four">d</div>
+    <div class="box five">e</div>
+</div>
+</body>
+</html>
